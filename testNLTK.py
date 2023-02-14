@@ -6,15 +6,7 @@ import re
 
 data = (txt.extractsample()).lower()
 
-# nltk.word_tokenize( )
-tokenized_sentences = nltk.sent_tokenize(data)
-tokenized_sentences2=[]
-for sentence in tokenized_sentences:
-    tokenized_sentences2.append(re.sub('\n','',sentence))
-
-tokenized_sentence=tokenized_sentences2
-for sentence in tokenized_sentences2:
-    print( sentence )
+# nltk.word_tokenize( )nl
 
 stop_words = set(corpus.stopwords.words("english"))
 punctuations = {',', '.', '(', ')', '\"', '\''}

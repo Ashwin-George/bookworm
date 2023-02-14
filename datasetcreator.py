@@ -14,7 +14,6 @@ data = (txt.extractsample()).lower()
 # nltk.word_tokenize( )
 
 tokenized_sentences2 = nltk.sent_tokenize(data)
-
 tokenized_sentences = []
 for sentence in tokenized_sentences2:
     sentence = re.sub(r'\W', ' ', sentence)

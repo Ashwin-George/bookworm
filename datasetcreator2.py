@@ -9,7 +9,7 @@ import numpy as np
 # nltk.download()
 
 
-data = (txt.extractsample()).lower()
+data = (txt.extractsample())
 
 # nltk.word_tokenize( )
 
