@@ -46,7 +46,7 @@ if len(candidates) != 1:
             max_occuring.append(i)
 else:
     max_occuring = candidates
-print(candidates)
+# print(candidates)
 for i in max_occuring:
     ans += database_sentences[i]
 print(ans)

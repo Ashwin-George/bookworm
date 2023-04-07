@@ -1,0 +1,314 @@
+import os
+
+from nltk.tokenize import word_tokenize, sent_tokenize
+
+from nltk.tag import StanfordNERTagger
+
+# st = StanfordNERTagger('/Users/Downloads/stanford-ner-2020-11-17/classifiers/english.all.3class.distsim.crf.ser.gz',
+#                        '/Users/Downloads/stanford-ner-2020-11-17/stanford-ner.jar',
+#                        encoding='utf-8')
+
+# st = StanfordNERTagger(r'stanford-ner-4.2.0/stanford-ner-2020-11-17/classifiers/english.all.3class.distsim.crf.ser.gz',
+#                        r'stanford-ner-4.2.0/stanford-ner-2020-11-17/stanford-ner.jar',
+#                        encoding='utf-8')
+# java_path = "C:/jdk-19.0.2/bin/java.exe"
+java_path=r"C:\Program Files\Java\jdk-11.0.11\bin\java.exe"
+os.environ['JAVAHOME'] = java_path
+
+arr=[]
+
+st = StanfordNERTagger(r"C:\Users\ashwi\Downloads\stanford-ner-4.2.0\stanford-ner-2020-11-17\classifiers\english.all.3class.distsim.crf.ser\english.all.3class.distsim.crf.ser",
+                       r"C:\Users\ashwi\Downloads\stanford-ner-4.2.0\stanford-ner-2020-11-17\stanford-ner.jar",
+                       encoding='utf-8')
+text_string2 = '''
+Sir Jagadish Chandra Bose was a scientist of many talents. He was born on 30 November, 1858 in Bikrampur, West Bengal. He was a polymath, physicist, biologist, botanist and archaeologist. Bose pioneered the study of radio and microwave optics. He joined the Presidency College of the University of Calcutta as a professor of physics. There, despite racial discrimination and a lack of funding and equipment, Bose carried on his scientific research. He made important contributions to the study of plants. He has laid the foundation of experimental science in the Indian sub-continent. He was the first person to use semiconductor junctions to detect radio signals. What’s more, he is also probably the father of open technology, as he made his inventions and work freely available for others to further develop and his reluctance for patenting his work is legendary.
+Another of his well known inventions is the crescograph. He measured plant response to various stimuli and hypothesized that plants can feel pain, understand affection etc. At the time when Bose was a student at Cambridge, Prafulla Chandra Roy was a student at Edinburgh. They met in London and became intimate friends.
+While most of us are aware of his scientific prowess, we might not be aware of his talent as an early writer of science fiction! He is in fact considered the father of Bengali science fiction.
+'''
+
+text_string = '''
+Sniffer dog Tucker uses his nose to help researchers find out why a killer whale population off the northwest coast of the United States is on tKe decline. He searches for whale faeces floating on the surface of the water, which are then collected for examination. He is one of the elite team of detection dogs used by scientists studying a number of species including right whales and killer whales.
+Conservation canines are fast becoming indispensable tools for biologists according to Aimee Hurt, associate director and co-founder of Working Dogs for Conservation, based in Three Forks, Montana.
+Over the last few years, though, so many new conservation dog projects have sprung up that Hurt can no longer keep track of them all. Her organization’s dogs and their handlers are fully booked to assist field researchers into 2012.
+“Dogs have such a phenomenal sense of smell”, explained Sam Wasser, director of the Center for Conservation biology at the University of Washington in Seattle. He has worked with scat-detection dogs since 199(g). Scientists have been using
+Conservation Canines in their research since 199(g). These dogs have enabled them to non-invasively access vast amount of genetic and physiological information which is used to tackle conservation problems around the world. Such information has proved vital for determining the causes and consequences of human disturbances on wildlife as well as the actions needed to mitigate such impacts.
+The ideal detection dog is extremely energetic with an excessive play drive. These dogs will happily work all • day long, motivated by the expectation of a ball game as a reward for sample detection. The obsessive, high energy personalities of detection dogs also make them difficult to maintain as pets. As a result, they frequently find themselves abandoned to animal shelters, facing euthanasia. The programme rescues these dogs and offers them a satisfying career in conservation research.
+'''
+text_string= '''The series follows the life of a boy named Harry Potter. In the first book, Harry Potter and the Philosopher's Stone, Harry lives in a cupboard under the stairs in the house of the Dursleys, his aunt, uncle and cousin, Dudley. The Dursleys consider themselves perfectly normal, but at the age of 11, Harry discovers that he is a wizard. He meets a half-giant named Hagrid who invites him to attend the Hogwarts School of Witchcraft and Wizardry. Harry learns that as a baby, his parents were murdered by the dark wizard Lord Voldemort. When Voldemort attempted to kill Harry, his curse rebounded and Harry survived with a lightning-shaped scar on his forehead.
+
+Harry becomes a student at Hogwarts and is sorted into Gryffindor House. He gains the friendship of Ron Weasley, a member of a large but poor wizarding family, and Hermione Granger, a witch of non-magical, or Muggle, parentage. Harry encounters the school's potions master, Severus Snape, who displays a dislike for him; the rich pure-blood Draco Malfoy whom he develops an enmity with; and the Defence Against the Dark Arts teacher, Quirinus Quirrell, who turns out to be allied with Lord Voldemort. The first book concludes with Harry's confrontation with Voldemort, who, in his quest to regain a body, yearns to gain the power of the Philosopher's Stone, a substance that bestows everlasting life.
+
+Harry Potter and the Chamber of Secrets describes Harry's second year at Hogwarts. Students are attacked and petrified by an unknown creature; wizards of Muggle parentage are the primary targets. The attacks appear related to the Chamber of Secrets, a fifty-year-old mystery at the school. Harry discovers an ability to speak the snake language Parseltongue, which he learns is rare and associated with the Dark Arts. When Hermione is attacked, Harry and Ron uncover the chamber's secrets and enter it. Harry discovers that the chamber was opened by Ron's younger sister, Ginny Weasley, who was possessed by an old diary in her belongings. The memory of Tom Marvolo Riddle, Voldemort's younger self, resided inside the diary and unleashed the basilisk, an ancient monster that kills those who make direct eye contact. Harry draws the Sword of Gryffindor from the Sorting Hat, slays the basilisk and destroys the diary.
+
+In the third novel, Harry Potter and the Prisoner of Azkaban, Harry learns that he is targeted by Sirius Black, an escaped convict who allegedly assisted in his parents' murder. As Harry struggles with his reaction to the dementors – creatures guarding the school that feed on despair – he reaches out to Remus Lupin, a new professor who teaches him the Patronus charm. On a windy night, Ron is dragged by a black dog into the Shrieking Shack; Harry and Hermione follow. The dog is revealed to be Sirius Black. Lupin enters the shack and explains that Black was James Potter's best friend; he was framed by another friend of James' Peter Pettigrew, who hides as Ron's pet rat, Scabbers. As the full moon rises, Lupin transforms into a werewolf and bounds away; the group chase after him but are surrounded by dementors. They are saved by a mysterious figure who casts a stag Patronus. This is later revealed to be a future version of Harry, who traveled back in time with Hermione using the Time Turner. The duo help Sirius escape on a Hippogriff.'''
+tokenized_text = sent_tokenize(text_string)
+tokenized_tags_list = []
+new_text_string = ''
+anaphora_p_sing = ['he', 'she', 'his', 'her', 'He', 'She', 'His', 'Her']
+anaphora_p_plural = ['they', 'their', 'They', 'Their']
+anaphora_l = ['this place', 'that place', 'the place', 'there,', 'there.', 'This place', 'That place', 'The place',
+              'There']
+
+person_list_last = []
+person_list_sentence = []
+org_list_last = []
+org_list_sentence = []
+loc_list_last = []
+loc_list_sentence = []
+coreference_list = []
+coreference_sol = []
+
+flag = 0
+flag_org = 0
+flag_loc = 0
+for i in range(0, len(tokenized_text)):
+    print(tokenized_text[i])
+    tokenized_text1 = word_tokenize(tokenized_text[i])
+    classified_text = st.tag(tokenized_text1)
+
+    print(classified_text)
+    for j in range(0, len(tokenized_text1)):
+
+        a = tokenized_text1[j]
+        b = classified_text[j][1]
+        if b == 'PERSON':
+
+            if flag == 0:
+                if classified_text[j][0] in coreference_list:
+
+                    for k in range(0, len(coreference_list)):
+                        if coreference_list[k] == classified_text[j][0]:
+                            if coreference_sol[k] in person_list_sentence:
+                                pass
+                            else:
+                                person_list_sentence.append(coreference_sol[k])
+                            break
+
+                else:
+                    try:
+                        if classified_text[j + 1][1] == 'PERSON':
+                            flag = 1
+                            full_name = classified_text[j][0] + ' '
+                        else:
+                            if classified_text[j][0] in person_list_sentence:
+                                pass
+                            else:
+                                person_list_sentence.append(classified_text[j][0])
+                    except:
+                        if classified_text[j][0] in person_list_sentence:
+                            pass
+                        else:
+                            person_list_sentence.append(classified_text[j][0])
+            else:
+                full_name += classified_text[j][0] + ' '
+                try:
+                    if classified_text[j + 1][1] == 'PERSON':
+                        flag = 1
+
+                    else:
+                        flag = 0
+                        full_name = full_name[0:len(full_name) - 1]
+                        if full_name in person_list_sentence:
+                            pass
+                        else:
+
+                            person_list_sentence.append(full_name)
+                        if full_name not in coreference_sol:
+                            individual = word_tokenize(full_name)
+                            for k in individual:
+                                coreference_list.append(k)
+                                coreference_sol.append(full_name)
+
+                except:
+                    flag = 0
+                    full_name = full_name[0:len(full_name) - 1]
+                    person_list_sentence.append(full_name)
+                    individual = word_tokenize(full_name)
+                    for k in individual:
+                        coreference_list.append(k)
+                        coreference_sol.append(full_name)
+        elif b == 'ORGANIZATION':
+            if flag_org == 0:
+                if classified_text[j][0] in coreference_list:
+                    for k in range(0, len(coreference_list)):
+                        if coreference_list[k] == classified_text[j][0]:
+                            if coreference_sol[k] in org_list_sentence:
+                                pass
+                            else:
+                                org_list_sentence.append(coreference_sol[k])
+                            break
+
+                try:
+                    if classified_text[j + 1][1] == 'ORGANIZATION':
+                        flag_org = 1
+                        full_name = classified_text[j][0] + ' '
+                    else:
+                        if classified_text[j][0] in org_list_sentence:
+                            pass
+                        else:
+                            org_list_sentence.append(classified_text[j][0])
+                except:
+                    if classified_text[j][0] in org_list_sentence:
+                        pass
+                    else:
+                        org_list_sentence.append(classified_text[j][0])
+            else:
+                full_name += classified_text[j][0] + ' '
+                try:
+                    if classified_text[j + 1][1] == 'ORGANIZATION':
+                        flag_org = 1
+
+                    else:
+                        flag_org = 0
+                        full_name = full_name[0:len(full_name) - 1]
+                        if full_name in org_list_sentence:
+                            pass
+                        else:
+
+                            org_list_sentence.append(full_name)
+                        if full_name not in coreference_sol:
+                            individual = word_tokenize(full_name)
+                            for k in individual:
+                                coreference_list.append(k)
+                                coreference_sol.append(full_name)
+
+                except:
+                    flag_org = 0
+                    full_name = full_name[0:len(full_name) - 1]
+                    org_list_sentence.append(full_name)
+                    individual = word_tokenize(full_name)
+                    for k in individual:
+                        coreference_list.append(k)
+                        coreference_sol.append(full_name)
+        elif b == 'LOCATION':
+            if flag_loc == 0:
+                if classified_text[j][0] in coreference_list:
+                    for k in range(0, len(coreference_list)):
+                        if coreference_list[k] == classified_text[j][0]:
+                            if coreference_sol[k] in loc_list_sentence:
+                                pass
+                            else:
+                                loc_list_sentence.append(coreference_sol[k])
+                            break
+
+                try:
+                    if classified_text[j + 1][1] == 'LOCATION':
+                        flag_loc = 1
+                        full_name = classified_text[j][0] + ' '
+                    else:
+                        if classified_text[j][0] in loc_list_sentence:
+                            pass
+                        else:
+                            loc_list_sentence.append(classified_text[j][0])
+                except:
+                    if classified_text[j][0] in org_list_sentence:
+                        pass
+                    else:
+                        loc_list_sentence.append(classified_text[j][0])
+            else:
+                full_name += classified_text[j][0] + ' '
+                try:
+                    if classified_text[j + 1][1] == 'LOCATION':
+                        flag_loc = 1
+
+                    else:
+                        flag_loc = 0
+                        full_name = full_name[0:len(full_name) - 1]
+                        if full_name in loc_list_sentence:
+                            pass
+                        else:
+                            loc_list_sentence.append(full_name)
+                        if full_name not in coreference_sol:
+                            individual = word_tokenize(full_name)
+                            for k in individual:
+                                coreference_list.append(k)
+                                coreference_sol.append(full_name)
+
+                except:
+                    flag_loc = 0
+                    full_name = full_name[0:len(full_name) - 1]
+                    loc_list_sentence.append(full_name)
+                    individual = word_tokenize(full_name)
+                    for k in individual:
+                        coreference_list.append(k)
+                        coreference_sol.append(full_name)
+        else:
+            pass
+        a = []
+        for l in anaphora_p_sing:
+            if l in tokenized_text1:
+                if len(person_list_sentence) != 0:
+                    if person_list_sentence[len(person_list_sentence) - 1] not in a:
+                        a.append(person_list_sentence[len(person_list_sentence) - 1])
+                else:
+                    try:
+                        a.append(person_list_last[0])
+                        if person_list_last[0] not in person_list_sentence:
+                            person_list_sentence.append(person_list_last[0])
+
+                    except:
+                        pass
+
+        for l in anaphora_p_plural:
+            if l in tokenized_text1:
+                if len(person_list_sentence) > 1:
+                    for m in person_list_sentence:
+                        if m not in a:
+                            a.append(m)
+                elif len(person_list_sentence) == 1:
+                    if person_list_sentence[0] not in a:
+                        a.append(person_list_sentence[0])
+                    try:
+                        for n in person_list_last:
+                            if n not in a:
+                                a.append(n)
+                                person_list_sentence.append(n)
+
+                    except:
+                        pass
+                else:
+                    try:
+                        for n in person_list_last:
+                            if n not in a:
+                                a.append(n)
+                                person_list_sentence.append(n)
+                    except:
+                        pass
+
+        for l in anaphora_l:
+            if l in tokenized_text1 and ',' in tokenized_text1:
+                if len(loc_list_sentence) != 0:
+                    if loc_list_sentence[len(loc_list_sentence) - 1] not in a:
+                        a.append(loc_list_sentence[len(loc_list_sentence) - 1])
+                else:
+                    try:
+                        a.append(loc_list_last[0])
+                        if loc_list_last[0] not in loc_list_sentence:
+                            loc_list_sentence.append(loc_list_last[0])
+
+                    except:
+                        pass
+
+                if len(org_list_sentence) != 0:
+                    if org_list_sentence[len(org_list_sentence) - 1] not in a:
+                        a.append(org_list_sentence[len(org_list_sentence) - 1])
+                else:
+                    try:
+                        a.append(org_list_last[0])
+                        if org_list_last[0] not in org_list_sentence:
+                            org_list_sentence.append(org_list_last[0])
+
+                    except:
+                        pass
+
+    person_list_last = person_list_sentence
+    person_list_sentence = []
+    org_list_last = org_list_sentence
+    org_list_sentence = []
+    loc_list_last = person_list_sentence
+    loc_list_sentence = []
+    print('Anaphora resolved:')
+    print(a)
+    arr.append(a)
+    print('\n')
+print(arr)
