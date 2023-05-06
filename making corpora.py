@@ -14,8 +14,8 @@ def preprocess(text):
     return output.lower().strip()
 
 
-# data['review'] = data.review.map(preprocess)
-# corpus_cleaned = data.astype(str).values.tolist()
+# raw_data['review'] = raw_data.review.map(preprocess)
+# corpus_cleaned = raw_data.astype(str).values.tolist()
 processed_data = [preprocess(w) for w in data]
 tokenizer = Tokenizer()
 tokenizer.fit_on_texts(processed_data)

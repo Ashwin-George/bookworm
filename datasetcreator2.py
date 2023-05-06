@@ -1,6 +1,7 @@
 import pandas as pd
 import textextractor as txt
 import nltk
+
 import nltk.corpus as corpus
 import sklearn
 import re
@@ -23,5 +24,5 @@ for sentence in tokenized_sentences2:
     count+=1
 json_object=json.dumps(tokenized_sentences)
 print(json_object)
-with open('data-sentences.json','w') as outfile:
+with open('raw_data/data-sentences.json','w') as outfile:
     outfile.write(json_object)

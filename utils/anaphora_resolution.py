@@ -4,16 +4,27 @@ from nltk.tokenize import word_tokenize, sent_tokenize
 
 from nltk.tag import StanfordNERTagger
 
-
-def parse(tokenized_text):
-    arr = []
-    java_path = r"C:\Program Files\Java\jdk-11.0.11\bin\java.exe"
-    os.environ['JAVAHOME'] = java_path
-
-    st = StanfordNERTagger(
+arr = []
+java_path = r"C:\Program Files\Java\jdk-11.0.11\bin\java.exe"
+os.environ['JAVAHOME'] = java_path
+st = StanfordNERTagger(
         r"C:\Users\ashwi\Downloads\stanford-ner-4.2.0\stanford-ner-2020-11-17\classifiers\english.all.3class.distsim.crf.ser\english.all.3class.distsim.crf.ser",
         r"C:\Users\ashwi\Downloads\stanford-ner-4.2.0\stanford-ner-2020-11-17\stanford-ner.jar",
         encoding='utf-8')
+
+def get_tags(tokenized_words):
+    # words=word_tokenize(tokenized_words)
+    return st.tag(tokenized_words)
+
+def parse(tokenized_text):
+    # arr = []
+    # java_path = r"C:\Program Files\Java\jdk-11.0.11\bin\java.exe"
+    # os.environ['JAVAHOME'] = java_path
+
+    # st = StanfordNERTagger(
+    #     r"C:\Users\ashwi\Downloads\stanford-ner-4.2.0\stanford-ner-2020-11-17\classifiers\english.all.3class.distsim.crf.ser\english.all.3class.distsim.crf.ser",
+    #     r"C:\Users\ashwi\Downloads\stanford-ner-4.2.0\stanford-ner-2020-11-17\stanford-ner.jar",
+    #     encoding='utf-8')
 
     # tokenized_text = sent_tokenize(textString)
     tokenized_tags_list = []

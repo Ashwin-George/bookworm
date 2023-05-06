@@ -7,7 +7,7 @@ lemmatizer = WordNetLemmatizer()
 
 
 ps = PorterStemmer()
-f = open('D:\pythonpro\TheNarrator\data-text.json', 'r')
+f = open('/raw_data-text.json', 'r')
 # print(main_words)
 
 database_sentences = json.loads(f.read())
